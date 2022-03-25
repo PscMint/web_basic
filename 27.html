@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font</title>
+    <style>
+        p{
+            width: 200px;
+            height: 50px;
+            margin:10px;
+            font-family: 'Times New Roman', Times, serif;
+           
+        
+            font-size:larger;
+            padding:10px 20px;
+        }
+        .c1{
+            background-color: hsl(210,13%,60%);
+            color:hsll(210,13%,30%);
+            text-shadow:0 1px 1px hsla(0,0%,100%,0.8)
+
+        }
+        .c2{
+            color: hsl(210,13%,60%);
+            background-color:hsl(210,13%,30%);
+            text-shadow:0 -1px 1px black;
+        }
+        .c3{
+            background-color: indianred;
+            font-size:35px;
+            line-height: 50px;
+          
+            text-align: center;
+            color:white;
+            text-shadow: 1px 1px 0 black,-1px -1px 0 black,
+            -1px 1px 0 black, -1px -1px 0 black;
+            
+
+        }
+        /* 可以通过多次设定文字的模糊半径实现这种发光效果 */
+        .c4{
+            background-color: #203;
+            font-size:35px;
+            line-height: 50px;
+          
+            text-align: center;
+            color:#ffc;
+            /* transition: 1s; */
+            
+           
+        }
+        .c4:hover{
+            
+            text-shadow: 0 0 .1em,0 0 .5em;
+            
+
+        }
+        /* 突起效果是通过将不同的阴影不断累加行程的效果 */
+        .c5{
+            background-color: hsl(0,50%,45%);
+            font-size:35px;
+            line-height: 50px;
+          
+            text-align: center;
+            color:white;
+
+            text-shadow:
+            1px 1px black,2px 2px black,3px 3px black,
+            4px 4px black,5px 5px black,6px 6px black,
+            7px 7px black; 
+        }
+    </style>
+</head>
+<body>
+    <!-- 凸版印刷 -->
+    <p class="c1">your the drug that I am adddicted to</p>
+    <p class="c2">your the drug that I am adddicted to</p>
+    <!-- 空心文字:使用阴影做出空心效果-->
+    <p class="c3">
+    css
+    </p>
+    <!-- 发光效果 -->
+    <p class="c4">Glow</p>
+    <!-- 文字突起效果 -->
+    <p class="c5">RETRO</p>
+
+</body>
+</html>

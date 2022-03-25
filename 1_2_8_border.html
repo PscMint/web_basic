@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            line-height: 100px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: small;
+        }
+        /* 2.多重边框 */
+        /* 双重阴影方案 */
+        .type1{ 
+            background-color: whitesmoke;
+            /* box-shadow不像border，margin是从border开始算的，可以把它直接想想成影子 */
+            box-shadow:0 0 0 5px yellowgreen, 0 0 0 10px green;
+            /* 下面的外边距是为了排版 */
+            margin-top: 20px;
+            margin-left:20px;
+        }
+        /* outline方案(outline+border)：实现效果多更加灵活 */
+        .type5{
+            /* 下面的外边距是为了排版 */
+            margin-top: 20px;
+            margin-left:18px;
+            outline:green solid 5px;
+            border:2px yellowgreen dashed;
+            background-color: green;
+            color:yellowgreen;
+
+        }
+        /* 如果是圆角的缝线效果，则考虑将outline移动进来 */
+        .type6{
+            border:green solid 5px;
+            border-radius: 3px;
+            outline:2px yellowgreen dashed;
+            background-color: green;
+            /* 使用outline的好处在于可以为outline产生的边框指定在需要的距离 */
+            outline-offset: -7px;
+             /* 下面的外边距是为了排版 */
+             margin-top: 20px;
+            margin-left:15px;
+            color:yellowgreen;
+
+        }
+        
+        /* 1.半透明边框 */
+        .type2{ 
+           border: 10px solid hsla(0,0%,0%,0.3);
+           background-color: grey;
+           background-clip: padding-box;
+           color:white;
+           
+        }
+        /* 8.连续的图像边框:信封边框和蚂蚁线的原理完全一致 */
+        
+        .type3{
+            border:10px transparent solid;
+            background:
+            linear-gradient(white,white)padding-box,
+            /* 如果图片能拼起来就写到50%+背景大小正方形，写0的意思就是和上一个数值一样，比如#fff中的0就是20%的意思 */
+            repeating-linear-gradient(-45deg,red 0 12.5%,#fff 0 25%,#58a 0 37.5%,#fff 0 50%)
+            0/5em 5em ;
+            
+            
+            animation: moving 1s linear infinite;
+        }
+        @keyframes  moving{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 5em 0;
+            }
+
+        }
+        @keyframes ants{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 100% 0;
+            }
+        }
+        .type4{
+        
+            border:transparent 1px solid;
+            background:
+            linear-gradient(white,white) padding-box,
+            repeating-linear-gradient(-45deg,white 0 25%,black 0 50%)
+            0/0.6em 0.6em ;
+            animation:ants 12s linear infinite;
+        }
+        /* 练习 */
+        .type7{
+            border: 2px dashed transparent;
+            
+            background: 
+            linear-gradient(white,white) padding-box,
+            repeating-linear-gradient(-45deg ,rgb(94, 127, 219) 0 25%,rgb(206, 204, 204) 0 50%) 0 0/ 0.5em 0.55em ;
+        }
+    </style>
+</head>
+<body>
+   
+   
+    <div class="type2">transparent</div>
+  
+<div class="type3"> envelope </div>
+<div class="type4">ants</div>
+<div class="type1">double</div>
+<div class="type5">line1</div>
+<div class="type6">line2</div>
+<div class="type7"></div>
+
+</body>
+</html>

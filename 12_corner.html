@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corner</title>
+    <style>
+        div{
+            margin:20px;
+        }
+        p{
+            padding-left: 3px;
+            
+            font-size: medium;
+            color:white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .block1{
+            padding:10px;
+            width: 200px;
+            height: 100px;
+            /* background: #58a; */
+            background: 
+            linear-gradient(-45deg,transparent 10%,#58a 0) ;
+            
+            background-repeat: no-repeat;
+        }
+        .block2{
+            padding:10px;
+            width: 200px;
+            height: 100px;
+            /* background: #58a; */
+            background: 
+            linear-gradient(135deg,transparent 10%,#58a 0) top left,
+            linear-gradient(-135deg,transparent 10%,#58a 0) top right,
+            linear-gradient(45deg,transparent 10%,#58a 0) bottom left,
+            linear-gradient(-45deg,transparent 10%,#58a 0) bottom right;
+            background-size:50% 50%;
+            background-repeat: no-repeat;
+        }
+        .block3{
+            padding:10px;
+            width: 200px;
+            height: 100px;
+            /* background: #58a; */
+            background: 
+            radial-gradient(circle at top left,transparent 10%,#58a 0) top left,
+            radial-gradient(circle at top right,transparent 10%,#58a 0) top right,
+            radial-gradient(circle at  bottom left,transparent 10%,#58a 0) bottom left,
+            radial-gradient(circle at bottom right,transparent 10%,#58a 0) bottom right;
+            background-size:50% 50%;
+            background-repeat: no-repeat;
+        }
+        .block4{
+            position: relative;
+            
+            width: 200px;
+            height: 80px;
+            /* background: #58a; */
+            border-radius: 5px;
+            background: 
+            linear-gradient(-135deg,transparent 25%,#58a 0) top ,
+            linear-gradient(-45deg,transparent 25%,#58a 0) bottom;
+            background-size:100% 50%;
+            background-repeat: no-repeat;
+        }
+        .arrow{
+            padding:0px;
+            margin:0px;
+            position: absolute;
+            top:50%;
+            left:15%;
+            transform: translateY(-50%);
+            font-size:larger;
+            line-height: 80px;
+            font-size:40px;
+            font-weight: bolder;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="block1">
+        <p> I feel like I am a little dog</p>
+    </div>
+    <div class="block2">
+        <p> I feel like I am a little dog</p>
+    </div>
+    <div class="block3">
+        <p> I feel like I am a little dog</p>
+    </div>
+    <div class="block4">
+        <p class="arrow"> next</p>
+    </div>
+    
+</body>
+</html>

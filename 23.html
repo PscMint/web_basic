@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code-show</title>
+    <style>
+        div{
+            width: 200px;
+            height: 150px;
+            border:solid 1px rgb(182, 182, 154);
+            padding:.5em;
+            line-height:1.5em;
+
+            background: linear-gradient(rgba(0,0,0,0.2) 50%,transparent 0) ;
+            background-color: beige;
+            /*使用auto应该就是这个位置上保留自然的状态，注意没有inherit这个关键词*/
+            background-size: 200px 3em;
+            /* 在content里面填充背景 ,这样就能保证字体在每一行上面*/
+            background-origin: content-box;
+            /* background-repeat: no-repeat; */
+          
+        }
+        /* 这个功能用不太行，而且也有点鸡肋 */
+        code{
+            white-space: pre;
+            tab-size:2;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+        <code>filename="calibration"    
+            def func(filename=filename):
+                pass
+            if __name__ == '__main__':
+                func()</code>
+        
+    </div>
+</body>
+</html>

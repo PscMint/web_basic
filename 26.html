@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>underline</title>
+    <style>
+       /* 复习属性选择器 */
+        a[href]{
+            margin:5px;
+            text-decoration: none;
+            display: inline-block;
+            color:rgba(12, 90, 104, 0.959)
+            
+
+        }
+        /* c1当换行的时候则会出现bug */
+        .c1{
+            
+           
+            border-bottom: 1px solid black
+            ;
+            line-height: .9em;
+        }
+        /* c2使用盒子阴影，但是存在的问题是线到字体的距离没有办法控制，后面的方法则可以使用定位 */
+        .c2{
+           box-shadow:0 1px  grey;
+
+        }
+        /*c3使用渐变来设置下划线,同时设置不会模糊的阴影，让交叉的地方避开
+        edge是这样的，但是firefox会设置为切线*/
+        .c3{
+            background-image: linear-gradient(gray,gray);
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: 0 1.15em;
+            text-shadow: 0.05em 0 white,-0.05em 0 white;
+
+
+        }
+        /* c4利用渐变做出虚线效果，这个思路和之前不太一样，但也属于一种复习 */
+        .c4{
+            background-image: linear-gradient(90deg,gray 0 66%,transparent 0);
+            background-size: 0.5em 1px;
+            background-repeat: repeat-x;
+            background-position: 0 1.15em;
+            text-shadow: 0.05em 0 white,-0.05em 0 white;
+
+
+        }
+        /* 自己尝试做的波浪线，不太成功还多添加了一个元素 */
+        .c5{
+            width: 100%;
+            height:3px;
+            background-image: repeating-linear-gradient(135deg,rgb(121, 121, 10)0 0.08em,transparent 0.08em 0.16em),
+            repeating-linear-gradient(-135deg,rgb(121, 121, 10)0 0.08em,transparent 0.08em 0.16em);
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="c1">css gradient</a>
+    <a class="c2"href="#">background-size</a>
+    <a class="c3"href="#">text-shadow pray gray</a>
+    <a href="#" class="c4">it's time to say F you</a>
+   
+    <a href="#" >
+        when it all fall down then whatever
+        <div class="c5"></div>
+    </a>
+    
+</body>
+</html>

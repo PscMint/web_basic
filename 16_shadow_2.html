@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shadow-2</title>
+    <style>
+      
+        div{
+            margin:20px;
+            width: 200px;
+            height: 100px;
+            background-color: #57a;
+        }
+        .box1{
+            position: relative;
+            border-radius: 8px;
+            filter:drop-shadow(2px 2px 4px  black);
+
+        }
+        .box1::before{
+            content:"";
+            width: 0px;
+            height:0px;
+               border-bottom: 10px solid transparent;
+               border-top: 10px solid transparent;
+               border-left:10px solid #57a;
+               border-right: 10px solid transparent;
+               position: absolute;
+               top: 50%;
+               right: -20px;
+               transform:translateY(-50%)
+        }
+        .box2{
+            border: dashed 5px #57a;
+            background-color: transparent;
+            filter:drop-shadow(2px 2px 2px black);
+        }
+        .box3{
+          
+            
+            
+            /* linear-gradient是配合在background下面的属性值 */
+            /* 这个角度就是沿着底边左部顺时针旋转的角度 */
+            background: 
+            linear-gradient(135deg,transparent 10%,#58a 0) top left,
+            linear-gradient(-135deg,transparent 10%,#58a 0) top right,
+            linear-gradient(45deg,transparent 10%,#58a 0) bottom left,
+            linear-gradient(-45deg,transparent 10%,#58a 0) bottom right;
+            /* 这两个属性设置必须放在下面 */
+            background-repeat: no-repeat;
+            background-size:50% 50%;
+            filter:drop-shadow(2px 2px 4px black);
+        }
+
+        .box4{
+            background-color: transparent;
+            border:solid 8px #57a;
+            filter:drop-shadow(2px 2px 4px red);
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"> dawg</div>
+    
+</body>
+</html>

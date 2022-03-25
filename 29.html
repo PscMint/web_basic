@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: #58a;
+            margin:10px;
+            font-family: "宋体";
+            font-size:20px;
+            text-align: center;
+            line-height: 100px;
+            color:white;
+
+        }
+        /* 为了提升用户的交互体验，可以为鼠标在不同的使用场合设定不同的样式 */
+        .c1:hover{
+            cursor:no-drop;
+        }
+       
+        /* 在视频和图片上面隐藏光标 */
+        .c2:hover{
+            cursor:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">假装为禁用按钮</div>
+    <div class="c2">假装有图片</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100%;
+            height: 80px;
+            margin:10px;
+        }
+        .type1{
+            background: linear-gradient(90deg, #fb3 0 15%, #655 15% 40%, #ab4 40% 65%, hsl(20, 40%, 90%) 0) ;
+            background-size: 80px 100%;
+        }
+        /*设置固定的背景颜色，然后适用条纹贴片，重复的宽度相互间隔*/
+        .type2{
+            background: hsl(20, 40%, 90%); 
+            background-image: 
+            linear-gradient(90deg, #fb3 10px, transparent 0),
+            /* 因为每次设置的背景大小不一样，所以有的会被上面遮挡10px，有的则会把20px完全露出来 */
+            linear-gradient(90deg, #ab4 20px, transparent 0),
+            linear-gradient(90deg, #655 20px, transparent 0);
+            background-size: 80px 100%, 60px 100%, 40px 100%;
+        }
+        /* 通过设置质数，来达到页面完全不重复 */
+        .type3{
+            background: hsl(20, 40%, 90%); 
+            background-image: 
+            linear-gradient(90deg, #fb3 11px, transparent 0), 
+            linear-gradient(90deg, #ab4 23px, transparent 0), 
+            linear-gradient(90deg, #655 41px, transparent 0);
+            background-size: 41px 100%, 61px 100%, 83px 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="type1"></div>
+    <div class="type2"></div>
+    <div class="type3"></div>
+    
+    
+</body>
+</html>

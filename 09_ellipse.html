@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin:10px;
+
+        }
+        .ellipse1{
+            background:#fb3;
+            height:150px;
+            width: 200px;
+            /*1.因为圆角处可以设定椭圆的横轴和纵轴长度，分别定为宽、高的一半即可*/
+            /* 1.border-radius: 100px/75px; */
+            /* 2.椭圆的长轴短轴还可以参考div的宽高来设置百分比，这样当长度发生变化无需改变 */
+            border-radius: 50%/50%;
+
+            
+        }
+        .ellipse2{
+            background:#fb3;
+            height:150px;
+            width: 200px;
+            /* 首先考虑一个角上的椭圆长短轴比例是div的宽高多少，再推导到每一个角的写法,每个角就是用全写的写法，容易读懂 */
+            border-radius: 50%/100% 100% 0 0;    
+        }
+        .ellipse3{
+            background:#fb3;
+            height:150px;
+            width: 200px;
+            border-radius: 100% 0 0 100%/50% 0 0 50%;    
+        }
+        .ellipse4{
+            background:#fb3;
+            height:150px;
+            width: 200px;
+            border-radius: 100% 0 0 0/100% 0 0 0;
+           
+               
+        }
+        .ellipse5{
+            
+            background:#fb3;
+            height: 30px;
+            width: 50px;
+            /* 首先考虑一个角上的椭圆长短轴比例是div的宽高多少，再推导到每一个角的写法 */
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgb(194, 131, 5);
+          
+        }
+        .ellipse5:hover{
+            background-color: rgba(255, 187, 51, 0.555);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- eg1：展示标准的椭圆： -->
+    <div class="ellipse1"></div>
+    <!-- eg2：展示半个椭圆 -->
+    <div class="ellipse2"></div>
+    <div class="ellipse3"></div>
+     <!-- eg3：展示1/4个椭圆 -->
+    <div class="ellipse4"></div>
+    <!-- 椭圆按钮 -->
+    <div class="ellipse5">
+    </div>
+</body>
+</html>

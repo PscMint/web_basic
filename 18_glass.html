@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    /* 给玻璃区域也设置为同样的背景 */
+    body,blockquote::before{
+        background: url(images/download_20210326221153.jpg) 0/cover fixed;
+    }
+    /* 伪元素来制作模糊的效果，这样字体就不会被模糊 */
+    blockquote::before{
+        content:"";
+        position: absolute;
+        bottom:0px; 
+        top:0px;
+        left:0px;
+        right:0px;
+        /* 增加模糊的滤镜 */
+        filter:blur(20px);
+        z-index:-1;
+        
+        
+        
+    }
+    blockquote{
+       /*居中、阴影、圆角设置*/
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 4px 4px 4px -2px black;
+        border-radius: 10px;
+        margin:0px;
+        padding:20px 16px;
+        width: 80%;
+        /* 给模糊的内容添加颜色，不然就只有blur模糊的元素图片背景，没有边界感*/
+
+        background-color:rgba(255, 255, 255, 0.3);
+        
+    }
+   
+    </style>
+</head>
+<body>
+   
+       
+            <blockquote>
+                I want to go home, I don't want to study, I want to go to sleep!
+                <footer>-
+                    <cite>mint Q</cite>
+                </footer>
+            </blockquote>
+     
+       
+    
+    
+</body>
+</html>

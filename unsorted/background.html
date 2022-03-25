@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        body{
+            background-color: gainsboro;
+        }
+        
+        div{
+            width: 100%;
+            height:150px;
+            margin:10px auto;
+        }
+        /* 制作横向条纹 */
+        .type1{
+            /* 如果两种颜色的色标值百分比之差为0，则不会形成渐变；差的值为形成渐变片段的高度 */
+            background: linear-gradient(#fb3 30%,#58a 30%);
+            /* 设置一条linear背景大小，之后没有填满的部分自动填充背景重复 */
+            background-size:100% 30px;
+        }
+        .type2{
+            /*0的含义就是取和前面一个一样的数值*/
+            /* background:linear-gradient(#fb3 33.3%,#58a 0%,#58a 66.6%,yellowgreen 0,yellowgreen 100%); */
+            /* 现在使用这种写法也可以 */
+            background:linear-gradient(#fb3 0 33.3%,#58a 0 66.6%,yellowgreen 0 100%);
+           
+            background-size:100% 30px;
+        }
+        /* 制作竖向条纹 */
+        .type3{
+            background:linear-gradient(to right,#fb3 50%,#58a 0);
+           
+            background-size: 30px 100%;
+        }
+        /* 类似于贴瓷砖，如果要保证长条的宽度15px,瓷砖的长15*1.4*2 */
+        .type4{
+            background:linear-gradient(45deg,#fb3 0%,#fb3 25%,#58a 0%,#58a 50%,#fb3 0%,#fb3 75%,#58a 0%,#58a 100%);
+            background-size:42px 42px;
+        }
+        /* 条纹的长度是在渐变轴行进行度量的，可以直接给定长度。这个属性会帮助色标自动填充完所有的背景，并且选择不同的角度,
+        
+        
+        
+        两个标记值分别是开始位置和终止位置*/
+        .type5{
+            background:repeating-linear-gradient(60deg,#fb3 0,#fb3 15px,#58a 15px,#58a 30px);
+            /* background-size:30px 30px; */
+        }
+        .type6{
+            /* background: repeating-linear-gradient(45deg,#fb3 0,#fb3 15px,#58a 15px,#58a 30px);
+             */
+             background: repeating-linear-gradient(45deg,#fb3 0 15px,#58a 15px 30px);
+        }
+        /* 将背景色设置为深色，在上面添加半透明条纹，一个是全透明，一个是半透明 */
+        .type7{
+            background:#58a repeating-linear-gradient(45deg,hsla(0,0%,100%,.1) 0 15px,transparent 15px 30px);
+        }
+        .type8{
+            background: 
+            #58a ; 
+            background-image:linear-gradient(90deg,white 1px,transparent 0),
+            linear-gradient(white 1px,transparent 0) ;
+            background-size:30px 30px;
+            
+            /* background:linear-gradient(orange 0px 15px,red 15px 30px);
+            background-size: 100% 30px; */
+        }
+        .type9{
+            background:linear-gradient(rgba(200,0,0,0.5) 50%,transparent 0),
+            linear-gradient(90deg,rgba(200,0,0,0.5) 50%,transparent 0);
+            background-size:30px 30px;
+        }
+        /* bug */
+        .type10{
+            background-color:#58a;
+            background-image:
+            linear-gradient(white 2px,transparent 0),
+            linear-gradient(90deg,white 2px,transparent 0),
+            linear-gradient(hsla(0,0,100%,0.1)  1px,transparent 0),
+            linear-gradient(90deg,hsla(0,0,100%,0.1) 1px,transparent 0);
+    
+
+            background-size:
+            75px 75px,
+            75px 75px,
+            15px 15px,
+            15px 15px; 
+
+        }
+        .type11{
+            background-color: #655;
+            background-image: 
+            radial-gradient(tan 30%,transparent 0),
+            radial-gradient(tan 30%,transparent 0);
+            background-size: 30px 30px;
+            background-position:0 0, 15px 15px;
+        }
+        .type12{
+            background-color:#eee;
+            background-image: 
+            linear-gradient(45deg,#bbb 25%,transparent 0),
+            linear-gradient(45deg,transparent 75%,#bbb 0),
+            linear-gradient(45deg,#bbb 25%,transparent 0),
+            linear-gradient(45deg,transparent 75%,#bbb 0);
+            background-position:0 0,15px 15px,15px 15px,30px 30px;
+            background-size: 30px 30px;
+        }
+        /* 这种类型是将两个三角形写在一个图层上，因此位置只需要移动一次 */
+        .type13{
+            background-color: #eee;
+            background-image: 
+            linear-gradient(45deg,rgba(0,0,0,0.25) 25%,transparent 0,transparent 75%,rgba(0,0,0,0.25) 0),
+            linear-gradient(45deg,rgba(0,0,0,0.25) 25%,transparent 0,transparent 75%,rgba(0,0,0,0.25) 0);
+            /* background-position: 0 0,15px 15px; */
+            background-size: 30px 30px;
+        }
+        
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="type1"></div>
+    <div class="type2"></div>
+    <div class="type3"></div>
+    <div class="type4"></div>
+    <div class="type5"></div>
+    <div class="type6"></div> 
+    <div class="type7"></div>
+    <div class="type8"></div>
+    <div class="type9"></div>
+    <!-- <div class="type10"></div> -->
+    <div class="type11"></div>
+    <div class="type12"></div>
+    <div class="type13"></div>
+    
+    
+</body>
+</html>

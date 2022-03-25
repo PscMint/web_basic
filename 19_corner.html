@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corner</title>
+    <style>
+        div{
+            margin:50px;
+            width: 200px;
+            height: 100px;
+            background: #58a;
+        }
+        /* 这个就是自己画个平面几何图即可 */
+        .corner1{
+           background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0/ 2em 2em,
+           linear-gradient(-135deg,transparent 1.4em,#58a 0) ; 
+        }
+        /* 但是这种不太真实 */
+        .corner2{
+            background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0/ 2.8em 1.6em,
+           linear-gradient(-150deg,transparent 1.4em,#58a 0) ;
+        }
+        .corner3{
+            position: relative;
+            background: linear-gradient(-150deg,transparent 1.4em,#58a 0) ;
+            border-radius: .5em;
+        }
+        .corner3::before{
+            content:"";
+            /* 这里已经给伪元素定位过了 ,top的值是算出来的,根据原始位置*/
+            position: absolute;
+            top:-1.2em;right:0;
+            /* 最后再添加一个颜色产生了一种高光效果,带深入理解 */
+            background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.2) 0,rgba(0,0,0,.4)) ;
+            height:2.8em;
+            width: 1.7em;
+            /* 如果绕着右下角旋转，就和边是平行的方便定位 */
+            transform: rotate(-30deg);
+            transform-origin: bottom right;
+            border-bottom-left-radius: inherit;
+            box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="corner1"></div>
+    <div class="corner2"></div>
+    <div class="corner3"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font-face</title>
+    <style>
+         @font-face {
+     /*取名字，最好就和原版名字一致*/
+            font-family: 'my-font';
+     /*引入字体资源的相对路径*/
+            src: 
+               local("华文隶书");
+            
+           
+        }
+        p{
+            font-family:"my-font"
+        }
+    </style>
+</head>
+<body>
+    <p>这是一段中文</p>
+    
+</body>
+</html>

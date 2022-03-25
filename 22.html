@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lines</title>
+    <style>
+        div{
+            width: 200px;
+            height: 150px;
+            border:solid 1px rgb(182, 182, 154);
+            padding:.5em;
+            line-height:1.5em;
+
+            background: linear-gradient(rgba(0,0,0,0.2) 50%,transparent 0) ;
+            background-color: beige;
+            /*使用auto应该就是这个位置上保留自然的状态，注意没有inherit这个关键词*/
+            background-size: 200px 3em;
+            /* 在content里面填充背景 ,这样就能保证字体在每一行上面*/
+            background-origin: content-box;
+            /* background-repeat: no-repeat; */
+          
+        }p{
+            margin: 0px;
+            padding-left:5px;
+            font-size:small;
+            font-family:'Times New Roman', Times, serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p>I will be fine</p>
+        <p>I am falling down</p>
+        <p>All fall down</p>
+        <p>falls down down down</p>
+    </div>
+    
+</body>
+</html>

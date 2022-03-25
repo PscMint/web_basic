@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        div{
+            width: 600px;
+            height:100px;
+            border: 1px solid black;
+            margin:30px;
+            padding:.25em;
+        }
+        dt,dd{
+            display: inline;
+            margin:0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        dd{
+            font-weight: bold;
+        }
+        /* 紧跟着dd的dt表示一个新的项目，所以这个时候进行换行 */
+        dd+dt::before{
+            content:"\A";
+            /* 保留换行符号，不和空白符合并 */
+            white-space: pre;
+        }
+        /* 如果dd有多个，接着后面的内容使用伪元素添加`，`进行分隔*/
+        dd+dd::before{
+            content:",";
+            margin-right:0.25em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <dl>
+            <dt>name:</dt>
+            <dd>Lily</dd>
+            <dt>e-mail:</dt>
+            <dd>12345@163.com</dd>
+            <dd>12345@qq.com</dd>
+            <dd>12345@123.com</dd>
+            <dt>telephone:</dt>
+            <dd>18787898888</dd>
+        </dl>
+    </div>
+    
+</body>
+</html>

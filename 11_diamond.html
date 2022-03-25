@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diamond</title>
+    <style>
+        /* 方案-1 */
+        .pic{
+            width: 200px;
+            transform:rotate(45deg);
+            overflow: hidden;
+            margin:100px;
+
+        }
+        /* 因为把图片转回来而div保持不变，就会有图片的角被切割，这样就成了八边形 */
+        .pic>img{
+            
+            max-width:100%;
+            /* 为了实现菱形，需要图片的宽度和对角线一样长，因此可以用scale放大1.42倍 */
+            transform:rotate(-45deg) scale(1.42);
+        }
+        /* 方案-2的思路是类似于svg，它是画出来的路径，而且也不会放大图片，不过这个方案ie不支持 */
+        .pic-2{
+            /* 特意调整为和方案-1基本相同的大小 */
+            width: 284px;
+            clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+            transition: 1s clip-path;
+        }
+        .pic-2:hover{
+            clip-path: polygon(0 0,100% 0%,100% 100%,0 100%);
+            cursor: pointer;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="pic">
+        <img src="images/lofter_1622811049239.jpg" alt="figure">
+    </div>
+
+    <img class="pic-2" src="images/lofter_1622811052599.jpg" alt="figure_2">
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pie</title>
+</head>
+<style>
+    @keyframes spin{
+        to{transform:rotate(.5turn)}
+
+    }
+    @keyframes bg{
+        50%{background-color: #655;}
+    }
+    div{
+        margin:50px;
+    }
+    .pie{
+        width: 200px;height: 200px;
+        border-radius: 50%;
+        background-color: yellowgreen;
+        background-image: linear-gradient(to right,transparent 50%,#655 0);
+        /* overflow: hidden; */
+
+    }
+    .pie::before{
+        content: "";
+        display: block;
+        margin-left: 50%;
+        height: 100%;
+        /* 使用border-radius绘制半圆 */
+        border-radius: 0 100% 100% 0/0 50% 50% 0;
+        /* 在0-180度的时候，把伪元素设置为yellowgreen，180-360时候把伪元素设置为#655 */
+        background-color: yellowgreen;
+        transform-origin: left;
+        /* 1turn就是一圈，1trun=360deg */
+        /* transform: rotate(.2turn); */
+        /* 要理解到它是处于循环状态，之后就可以把半圆旋转两次看作一个周期 */
+        /* 实现直接通过数字指定占比的技巧，首先利用暂停将动画停止，之后利用负数的delay，会使得它停留在20s后本该处在的位置 */
+        animation: spin 5s linear infinite,bg 10s step-end infinite;
+        animation-delay:-2s;
+        animation-play-state: paused;
+        
+
+    }
+    /* 更加简单直接的方法，使用conic-gradient绘制饼图，原理和linear-gradient类似 */
+    .pie1{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background:conic-gradient(#655 0 20%,yellowgreen 20% 50%,yellow 0)
+    }
+</style>
+<body>
+    <div class="pie"></div>
+    <div class="pie1"></div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin:30px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .fig{
+            width: 100%;
+            height: 100%;
+            display: block;
+            /* filter:sepia() saturate(4) hue-rotate(295deg); */
+            filter:sepia() ;
+            transition: 3s;
+        }
+        .fig:hover{
+        filter:none;
+        cursor: pointer;
+        }
+        .a_color{
+            display: block;
+            width: 100%;
+            height: 100%;
+            
+            background: hsl(335,100%,50%);
+            transition: 1s;
+        }
+        
+        .fig2{
+            width: 100%;
+            height: 100%;
+           
+            mix-blend-mode: luminosity;
+           
+        }
+        .a_color:hover{
+            background: transparent;
+
+        }
+        .fig3{
+
+            background-size: cover;
+            background-image: url(images/download_20210429150444.jpg);
+            background-color: hsl(335,100%,50%);
+            background-blend-mode: luminosity;
+            transition: 1s background-color;
+            cursor: pointer;
+        }
+        .fig3:hover{
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="images/download_20210429150444.jpg" alt="" class="fig">
+
+</div>
+<div>
+    <a href="#" title="flower" class="a_color">
+        <img src="images/download_20210429150444.jpg" alt="" class="fig2">
+    </a>
+</div>
+<div class="fig3">
+    
+</div>
+</body>
+</html>
