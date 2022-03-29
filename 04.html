@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-box</title>
+    <style>
+        /* 在firefox、chrome、edge都试过了，outline变成圆角的了 */
+        div{
+            margin:10px;
+            width: 200px;
+            height: 100px;
+            background-color: rgb(193, 218, 233);
+            border-radius: .8em;
+            /* 使用阴影填充缝隙 */
+           box-shadow: 0 0 0 .6em #58a;
+           /* outline是不会跟着圆角变化的 */
+            outline: 10px #58a solid;
+        }
+
+    </style>
+</head>
+<body>
+   <div></div>
+    
+</body>
+</html>

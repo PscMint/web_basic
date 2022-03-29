@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-position</title>
+    <style>
+      
+        div{
+            margin:20px;
+            background-image:url(images/狗狗.png);
+            background-repeat:no-repeat;
+            background-position: bottom right;
+            
+            
+            width: 200px;
+            height: 100px;
+            background-color: whitesmoke;
+            padding: 20px;
+            color:#58a;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 36px;
+            
+        }
+          /* 通过background-origin设定图片可以从context-box开始定位 */
+        .dog1{
+            background-origin: content-box;
+        }
+        /* background-position关键字+px */
+        .dog2{
+            background-position: right 20px bottom 20px;
+            
+        }
+        /* calc函数的用法,可以用100%代替父元素长度，加减具体的px值 */
+        .dog3{
+            background-position:  calc(100% - 20px) calc(100% - 20px); 
+
+        }
+    </style>
+</head>
+<body>
+    <div class="dog1">DOG</div>
+    <div class="dog2">DOG</div>
+    <div class="dog3">DOG</div>
+    
+</body>
+</html>
